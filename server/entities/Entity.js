@@ -1,7 +1,28 @@
 export default class Entity {
 
-    validar() {
-        throw new Error("O método validar() deve ser implementado.");
+
+    constructor() {
+
     }
 
+    //to json generico que pode ser herdado por todas as entidades
+   toJSON() {
+    const props = Object.getOwnPropertyNames(Object.getPrototypeOf(this));
+
+    let json = {};
+
+    for (let prop of props) {
+
+        if (
+            prop !== "constructor" &&
+            prop !== "validar" &&
+            prop !== "toJSON"
+        ) {
+            json[prop] = this[prop];
+        }
+
+    }
+
+    return json;
+}
 }
