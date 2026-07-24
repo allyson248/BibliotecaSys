@@ -1,9 +1,19 @@
-import Database from "../database/Database.js";
+import Database from "../database/Database.js"
+
 
 export default class Repository {
 
-    constructor() {
-        this.banco = new Database();
+    #banco;
+
+    get banco() {
+        return this.#banco;
     }
 
+    set banco(value) {
+        this.#banco = value;
+    }
+
+    constructor() {
+        this.#banco = new Database();
+    }
 }
