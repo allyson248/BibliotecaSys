@@ -22,3 +22,16 @@ VALUES
 ('Ciência'),
 ('Biografia'),
 ('Infantil');
+
+INSERT INTO tb_autor (nome, nacionalidade)
+VALUES
+('Machado de Assis', 'Brasileira'),
+('Clarice Lispector', 'Brasileira'),
+('J.K. Rowling', 'Britânica'),
+('George Orwell', 'Britânica'),
+('Gabriel García Márquez', 'Colombiana'),
+('J.R.R. Tolkien', 'Britânica'),
+('Agatha Christie', 'Britânica'),
+('Stephen King', 'Americana'),
+('Jane Austen', 'Britânica'),
+('Fiódor Dostoiévski', 'Russa');

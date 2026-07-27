@@ -13,7 +13,11 @@
   "paths": {
     "/categorias/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Lista todas as categorias",
+        "description": "Retorna todas as categorias cadastradas.",
         "responses": {
           "200": {
             "description": "OK"
@@ -24,7 +28,11 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Cadastra categorias",
+        "description": "Cadastra uma nova categoria.",
         "responses": {
           "201": {
             "description": "Created"
@@ -54,7 +62,11 @@
     },
     "/categorias/{id}": {
       "put": {
-        "description": "",
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Atualiza uma categoria",
+        "description": "Atualiza a categoria desejada",
         "parameters": [
           {
             "name": "id",
@@ -95,7 +107,11 @@
         }
       },
       "get": {
-        "description": "",
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Lista certas categorias",
+        "description": "Retorna todas as categorias cadastradas de acordo com o parametro.",
         "parameters": [
           {
             "name": "id",
@@ -119,7 +135,169 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Categorias"
+        ],
+        "summary": "Deleta uma categoria",
+        "description": "Deleta a categoria desejada",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/autor/": {
+      "get": {
+        "tags": [
+          "Autores"
+        ],
+        "summary": "Lista todos os Autores",
+        "description": "Retorna todos os Autores cadastrados.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Autores"
+        ],
+        "summary": "Cadastra Autor",
+        "description": "Cadastra um novo autor.",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "example": "any"
+                  },
+                  "nacionalidade": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/autor/{id}": {
+      "put": {
+        "tags": [
+          "Autores"
+        ],
+        "summary": "Atualiza um autor",
+        "description": "Atualiza o autor desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "example": "any"
+                  },
+                  "nacionalidade": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Autores"
+        ],
+        "summary": "Lista certos Autores",
+        "description": "Retorna todos os Autores cadastrados de acordo com o parametro.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Autores"
+        ],
+        "summary": "Deleta um autor",
+        "description": "Deleta o autor desejado",
         "parameters": [
           {
             "name": "id",
