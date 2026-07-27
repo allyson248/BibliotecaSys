@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "start": "node server.js",
-    "swagger": "node swagger.js",
-    "dev": "nodemon server.js"
-  },
+ "scripts": {
+  "prestart": "npm run swagger",
+  "start": "node server.js",
+  "swagger": "node swagger.js",
+  "predev": "npm run swagger",
+  "dev": "nodemon server.js"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
