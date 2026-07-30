@@ -110,7 +110,7 @@
         "tags": [
           "Categorias"
         ],
-        "summary": "Lista certas categorias",
+        "summary": "Busca uma categoria pelo id",
         "description": "Retorna todas as categorias cadastradas de acordo com o parametro.",
         "parameters": [
           {
@@ -268,7 +268,7 @@
         "tags": [
           "Autores"
         ],
-        "summary": "Lista certos Autores",
+        "summary": "Busca um autor pelo id",
         "description": "Retorna todos os Autores cadastrados de acordo com o parametro.",
         "parameters": [
           {
@@ -298,6 +298,179 @@
         ],
         "summary": "Deleta um autor",
         "description": "Deleta o autor desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/leitor/": {
+      "get": {
+        "tags": [
+          "Leitores"
+        ],
+        "summary": "Lista todos os Leitores",
+        "description": "Retorna todos os Leitores cadastrados.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Leitores"
+        ],
+        "summary": "Cadastra Leitor",
+        "description": "Cadastra um novo leitor.",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "example": "any"
+                  },
+                  "cpf": {
+                    "example": "any"
+                  },
+                  "telefone": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/leitor/{id}": {
+      "put": {
+        "tags": [
+          "Leitores"
+        ],
+        "summary": "Atualiza um leitor",
+        "description": "Atualiza o leitor desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "example": "any"
+                  },
+                  "cpf": {
+                    "example": "any"
+                  },
+                  "telefone": {
+                    "example": "any"
+                  },
+                  "email": {
+                    "example": "any"
+                  },
+                  "ativo": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Leitores"
+        ],
+        "summary": "Busca um leitor pelo id",
+        "description": "Retorna todos os Leitores cadastrados de acordo com o parametro.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Leitores"
+        ],
+        "summary": "Deleta um leitor",
+        "description": "Deleta o leitor desejado",
         "parameters": [
           {
             "name": "id",

@@ -35,3 +35,20 @@ VALUES
 ('Stephen King', 'Americana'),
 ('Jane Austen', 'Britânica'),
 ('Fiódor Dostoiévski', 'Russa');
+
+INSERT INTO tb_leitor
+(nome, cpf, telefone, email)
+
+VALUES
+(
+'João Silva',
+'123.456.789-10',
+'(18)99999-1111',
+'joao@email.com'
+),
+(
+'Maria Souza',
+'987.654.321-00',
+'(18)98888-2222',
+'maria@email.com'
+);
