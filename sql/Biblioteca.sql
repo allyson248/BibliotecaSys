@@ -41,7 +41,7 @@ CREATE TABLE tb_livro (
     id_livro INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(100) NOT NULL,
     isbn VARCHAR(20) NOT NULL UNIQUE,
-    ano YEAR NOT NULL,
+    ano INT NOT NULL,
     editora VARCHAR(100) NOT NULL,
     quantidade INT NOT NULL DEFAULT 0 CHECK(quantidade >= 0),
     capa VARCHAR(255),

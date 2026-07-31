@@ -493,6 +493,194 @@
           }
         }
       }
+    },
+    "/livro/": {
+      "get": {
+        "tags": [
+          "Livros"
+        ],
+        "summary": "Lista todos os Livros",
+        "description": "Retorna todos os Livros cadastrados.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Livros"
+        ],
+        "summary": "Cadastra Livro",
+        "description": "Cadastra um novo Livro.",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "example": "any"
+                  },
+                  "isbn": {
+                    "example": "any"
+                  },
+                  "ano": {
+                    "example": "any"
+                  },
+                  "editora": {
+                    "example": "any"
+                  },
+                  "quantidade": {
+                    "example": "any"
+                  },
+                  "capa": {
+                    "example": "any"
+                  },
+                  "autor": {
+                    "example": "any"
+                  },
+                  "categoria": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/livro/{id}": {
+      "put": {
+        "tags": [
+          "Livros"
+        ],
+        "summary": "Atualiza um Livro",
+        "description": "Atualiza o Livro desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "titulo": {
+                    "example": "any"
+                  },
+                  "isbn": {
+                    "example": "any"
+                  },
+                  "ano": {
+                    "example": "any"
+                  },
+                  "editora": {
+                    "example": "any"
+                  },
+                  "quantidade": {
+                    "example": "any"
+                  },
+                  "capa": {
+                    "example": "any"
+                  },
+                  "autor": {
+                    "example": "any"
+                  },
+                  "categoria": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Livros"
+        ],
+        "summary": "Busca um Livro pelo id",
+        "description": "Retorna todos os Livro cadastrados de acordo com o parametro.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Livros"
+        ],
+        "summary": "Deleta um Livro",
+        "description": "Deleta o Livro desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }
