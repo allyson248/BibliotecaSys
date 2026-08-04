@@ -681,6 +681,182 @@
           }
         }
       }
+    },
+    "/emprestimo/": {
+      "get": {
+        "tags": [
+          "Emprestimos"
+        ],
+        "summary": "Lista todos os Empréstimos",
+        "description": "Retorna todos os Empréstimos cadastrados.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Emprestimos"
+        ],
+        "summary": "Cadastra Empréstimo",
+        "description": "Cadastra um novo Empréstimo.",
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "livro": {
+                    "example": "any"
+                  },
+                  "leitor": {
+                    "example": "any"
+                  },
+                  "dataEmprestimo": {
+                    "example": "any"
+                  },
+                  "dataPrevista": {
+                    "example": "any"
+                  },
+                  "dataDevolucao": {
+                    "example": "any"
+                  },
+                  "status": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/emprestimo/{id}": {
+      "put": {
+        "tags": [
+          "Emprestimos"
+        ],
+        "summary": "Atualiza um Empréstimo",
+        "description": "Atualiza o Empréstimo desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "livro": {
+                    "example": "any"
+                  },
+                  "leitor": {
+                    "example": "any"
+                  },
+                  "dataEmprestimo": {
+                    "example": "any"
+                  },
+                  "dataPrevista": {
+                    "example": "any"
+                  },
+                  "dataDevolucao": {
+                    "example": "any"
+                  },
+                  "status": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Emprestimos"
+        ],
+        "summary": "Busca um Empréstimo pelo id",
+        "description": "Retorna todos os Empréstimo cadastrados de acordo com o parametro.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Emprestimos"
+        ],
+        "summary": "Deleta um Empréstimo",
+        "description": "Deleta o Empréstimo desejado",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   }
 }

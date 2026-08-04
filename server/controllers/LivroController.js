@@ -22,7 +22,11 @@ export default class LivroController{
     async gravar(req, res) {
         try{
             let {titulo, isbn, ano, editora, quantidade,capa,autor,categoria} = req.body;
-
+            if (!autor || !categoria) {
+            return res.status(400).json({
+        msg: "Autor e categoria são obrigatórios."
+             });
+        }
             let entidade = new LivroEntity(0, titulo, isbn, ano, editora,quantidade,capa, new AutorEntity(autor.id),new CategoriaEntity(categoria.id));
             if(entidade.validar()) {
                 let result = await this.#repo.gravar(entidade);
@@ -82,7 +86,13 @@ export default class LivroController{
       async atualizar(req, res) {
         try{
             let {id} = req.params;
-             let {titulo, isbn, ano, editora, quantidade,capa,autor,categoria} = req.body;
+             
+            let {titulo, isbn, ano, editora, quantidade,capa,autor,categoria} = req.body;
+            if (!autor || !categoria) {
+    return res.status(400).json({
+        msg: "Autor e categoria são obrigatórios."
+    });
+}
             let livro = new LivroEntity(id, titulo, isbn, ano, editora,quantidade,capa, new AutorEntity(autor.id),new CategoriaEntity(categoria.id));
             if(livro.validar() && id) {
                 let livroEncontrado = await this.#repo.obter(id);
